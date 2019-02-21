@@ -1,0 +1,8 @@
+SuperHero
+health=80
+attack=75
+defence=80
+Villain
+health=10
+attack=15
+defence=20
