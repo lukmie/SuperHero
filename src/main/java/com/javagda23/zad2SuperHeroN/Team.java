@@ -41,4 +41,13 @@ public class Team {
 
         return heroes.get(0);
     }
+
+    public int getTeamPower(){
+        int power = 0;
+        for (AbstractHero hero : heroes) {
+            power += hero.getPower();
+        }
+
+        return power;
+    }
 }

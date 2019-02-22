@@ -27,5 +27,6 @@ public class Main {
         System.out.println(t1.addHeroToTeam(v6));
 
         System.out.println(t1.getTeamLeader());
+        System.out.println(t1.getTeamPower());
     }
 }
