@@ -50,4 +50,14 @@ public class Team {
 
         return power;
     }
+
+    public void buffTeamPower(){
+        for (AbstractHero hero : heroes) {
+            if(hero instanceof Villain){
+                hero.getHeroStatistics().increaseHealth(10);
+            } else if (hero instanceof SuperHero){
+                 hero.getHeroStatistics().increaseDefence(10);
+            }
+        }
+    }
 }
