@@ -35,5 +35,7 @@ public class Main {
         t1.buffTeamPower();
         System.out.println(t1.getTeamPower());
         System.out.println("after " + v7.getHeroStatistics().getDefence());
+        t1.buffTeamPower();
+        System.out.println("after 2nd buff " + v7.getHeroStatistics().getDefence());
     }
 }

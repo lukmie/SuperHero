@@ -12,6 +12,7 @@ public class Team {
     private TeamType type;
     private List<AbstractHero> heroes;
     private AbstractHero teamLeader;
+    int count = 0;
 
     public Team(TeamType type) {
         this.type = type;
@@ -52,12 +53,16 @@ public class Team {
     }
 
     public void buffTeamPower(){
-        for (AbstractHero hero : heroes) {
-            if(hero instanceof Villain){
-                hero.getHeroStatistics().increaseHealth(10);
-            } else if (hero instanceof SuperHero){
-                 hero.getHeroStatistics().increaseDefence(10);
+        if(count == 0){
+            for (AbstractHero hero : heroes) {
+                if(hero instanceof Villain){
+                    hero.getHeroStatistics().increaseHealth(10);
+                } else if (hero instanceof SuperHero){
+                    hero.getHeroStatistics().increaseDefence(10);
+                }
             }
-        }
+        } else System.out.println("Can't do this anymore.");
+
+        count++;
     }
 }
