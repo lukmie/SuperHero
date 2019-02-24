@@ -25,13 +25,18 @@ public class Main {
         System.out.println(v4.getPower());
         System.out.println(v5.getPower());
         System.out.println(v6.getPower());
-        System.out.println(t1.addHeroToTeam(v2));
-        System.out.println(t1.addHeroToTeam(v3));
-        System.out.println(t1.addHeroToTeam(v4));
-        System.out.println(t1.addHeroToTeam(v5));
-        System.out.println(t1.addHeroToTeam(v6));
-        System.out.println(t1.addHeroToTeam(s7));
-        System.out.println(t2.addHeroToTeam(s8));
+
+        try {
+            t1.addHeroToTeam(v2);
+            t1.addHeroToTeam(v3);
+            t1.addHeroToTeam(v4);
+            t1.addHeroToTeam(v5);
+            t1.addHeroToTeam(v6);
+            t1.addHeroToTeam(s7);
+            t1.addHeroToTeam(s8);
+        } catch (InvalidHeroTeamException e) {
+            e.printStackTrace();
+        }
 
         System.out.println(t1.getTeamLeader());
         System.out.println(t1.getTeamPower());

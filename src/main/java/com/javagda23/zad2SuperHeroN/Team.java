@@ -12,19 +12,20 @@ public class Team {
     private TeamType type;
     private List<AbstractHero> heroes;
     private AbstractHero teamLeader;
+    private Side side;
     int count = 0;
 
     public Team(TeamType type) {
+        this.side = Side.UNKNOWN;
         this.type = type;
         this.heroes = new ArrayList<>();
     }
 
-    public boolean addHeroToTeam(AbstractHero hero){
+    public void addHeroToTeam(AbstractHero hero) throws InvalidHeroTeamException {
         if(hero.getTeamType() == this.getType()){
             heroes.add(hero);
-            return true;
         } else
-            return false;
+            throw new InvalidHeroTeamException("Can't add hero to the team.");
     }
 
     public AbstractHero getTeamLeader() {
