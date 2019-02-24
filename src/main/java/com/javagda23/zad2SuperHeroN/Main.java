@@ -16,7 +16,8 @@ public class Main {
         Villain v4 = new Villain("c", new HeroStatistics(20,20,15), TeamType.RED);
         Villain v5 = new Villain("e", new HeroStatistics(10,10,15), TeamType.RED);
         Villain v6 = new Villain("f", new HeroStatistics(10,10,15), TeamType.RED);
-        SuperHero v7 = new SuperHero("g", new HeroStatistics(10,10,15), TeamType.RED);
+        SuperHero s7 = new SuperHero("g", new HeroStatistics(10,10,15), TeamType.RED);
+        SuperHero s8 = new SuperHero("g", new HeroStatistics(10,10,15), TeamType.GREEN);
         Team t1 = new Team(TeamType.RED);
         Team t2 = new Team(TeamType.GREEN);
         System.out.println(v2.getPower());
@@ -29,18 +30,23 @@ public class Main {
         System.out.println(t1.addHeroToTeam(v4));
         System.out.println(t1.addHeroToTeam(v5));
         System.out.println(t1.addHeroToTeam(v6));
-        System.out.println(t1.addHeroToTeam(v7));
+        System.out.println(t1.addHeroToTeam(s7));
+        System.out.println(t2.addHeroToTeam(s8));
 
         System.out.println(t1.getTeamLeader());
         System.out.println(t1.getTeamPower());
 
-        System.out.println("before " + v7.getHeroStatistics().getDefence());
-        t1.buffTeamPower();
+        System.out.println("before " + s7.getHeroStatistics().getDefence());
+//        t1.buffTeamPower();
         System.out.println(t1.getTeamPower());
-        System.out.println("after " + v7.getHeroStatistics().getDefence());
-        t1.buffTeamPower();
-        System.out.println("after 2nd buff " + v7.getHeroStatistics().getDefence());
+        System.out.println("after " + s7.getHeroStatistics().getDefence());
+//        t1.buffTeamPower();
+        System.out.println("after 2nd buff " + s7.getHeroStatistics().getDefence());
 
+
+        System.out.println("############");
         System.out.println(TeamUtils.compare(t1, t2));
+        System.out.println("###");
+        System.out.println(TeamUtils.compareAfterBuff(t1, t2));
     }
 }
