@@ -16,7 +16,7 @@ public class Main {
         Villain v4 = new Villain("c", new HeroStatistics(20,20,15), TeamType.RED);
         Villain v5 = new Villain("e", new HeroStatistics(10,10,15), TeamType.RED);
         Villain v6 = new Villain("f", new HeroStatistics(10,10,15), TeamType.RED);
-        SuperHero s7 = new SuperHero("g", new HeroStatistics(10,10,15), TeamType.RED);
+        SuperHero s7 = new SuperHero("g", new HeroStatistics(10111,10,15), TeamType.RED);
         SuperHero s8 = new SuperHero("g", new HeroStatistics(10,10,15), TeamType.GREEN);
         Team t1 = new Team(TeamType.RED);
         Team t2 = new Team(TeamType.GREEN);
@@ -33,7 +33,6 @@ public class Main {
             t1.addHeroToTeam(v5);
             t1.addHeroToTeam(v6);
             t1.addHeroToTeam(s7);
-            t1.addHeroToTeam(s8);
         } catch (InvalidHeroTeamException e) {
             e.printStackTrace();
         }
@@ -53,5 +52,8 @@ public class Main {
         System.out.println(TeamUtils.compare(t1, t2));
         System.out.println("###");
         System.out.println(TeamUtils.compareAfterBuff(t1, t2));
+
+        t1.setSideByPower();
+        System.out.println(t1.getSide());
     }
 }

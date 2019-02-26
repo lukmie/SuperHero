@@ -28,6 +28,41 @@ public class Team {
             throw new InvalidHeroTeamException("Can't add hero to the team.");
     }
 
+    public void setSideByCount() {
+        int villainCount = 0;
+        int superHeroCount = 0;
+        for (AbstractHero hero : heroes) {
+            if(hero instanceof Villain){
+                villainCount++;
+            } else if (hero instanceof SuperHero){
+                superHeroCount++;
+            }
+        }
+        if (villainCount > superHeroCount){
+            this.side = Side.EVIL;
+        } else {
+            this.side = Side.GOOD;
+        }
+    }
+
+    public void setSideByPower() {
+        int villainPower = 0;
+        int superHeroPower = 0;
+        for (AbstractHero hero : heroes) {
+            if(hero instanceof Villain){
+                villainPower += hero.getPower();
+            } else if (hero instanceof SuperHero){
+                superHeroPower += hero.getPower();
+            }
+        }
+        if (villainPower > superHeroPower){
+            this.side = Side.EVIL;
+        } else {
+            this.side = Side.GOOD;
+        }
+    }
+
+
     public AbstractHero getTeamLeader() {
         Collections.sort(heroes, new Comparator<AbstractHero>() {
             @Override
