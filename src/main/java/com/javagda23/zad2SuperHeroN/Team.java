@@ -1,11 +1,9 @@
 package com.javagda23.zad2SuperHeroN;
 
+import com.javagda23.zad4.Student;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 @Data
 public class Team {
@@ -26,6 +24,16 @@ public class Team {
             heroes.add(hero);
         } else
             throw new InvalidHeroTeamException("Can't add hero to the team.");
+    }
+
+    public void removeHeroFromTeam(AbstractHero hero){
+        Iterator<AbstractHero> iterator = heroes.iterator();
+        while (iterator.hasNext()) {
+            AbstractHero abstractHero = iterator.next();
+            if (abstractHero.equals(hero)) {
+                iterator.remove();
+            }
+        }
     }
 
     public void setSideByCount() {

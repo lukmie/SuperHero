@@ -30,4 +30,16 @@ public abstract class AbstractHero {
     }
 
     public abstract int getPower();
+
+
+    public abstract String toStringParse();
+
+    @Override
+    public String toString() {
+        return "AbstractHero{" +
+                "name='" + name + '\'' +
+                ", heroStatistics=" + heroStatistics +
+                ", teamType=" + teamType +
+                '}';
+    }
 }

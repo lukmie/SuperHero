@@ -9,4 +9,10 @@ public class SuperHero extends AbstractHero {
     public int getPower() {
         return (getHeroStatistics().getDefence() + getHeroStatistics().getAttack())*getHeroStatistics().getHealth();
     }
+
+    @Override
+    public String toStringParse() {
+        return getClass().getSimpleName()+ "; " + getName() + "; " + getHeroStatistics().getHealth() + "; "
+                + getHeroStatistics().getAttack() + "; " + getHeroStatistics().getDefence() + "; " + getTeamType();
+    }
 }
